@@ -1,3 +1,30 @@
+<?php
+require "dbBroker.php";
+require "model/user.php";
+
+session_start();
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $name = $_POST['username'];
+    $password = $_POST['password'];
+    $usr = new User(1, $name, $password);
+    $rs = User::logIn($usr, $conn);
+
+    if ($rs->num_rows == 1) {
+
+        echo "Uspesno ste se prijavili";
+        $_SESSION['user_id'] = $usr->id;
+
+        header('Location: home.php');
+        exit();
+    } else {
+
+        echo '<script type="text/javascript">alert("Pogresni podaci za login");
+                    </script>';
+        exit();
+    }
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -10,7 +37,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
 
-    <title>Hello, world!</title>
+    <title>NBA APP</title>
 </head>
 
 <body>
@@ -24,7 +51,7 @@
             <div class="form-group row">
                 <label for="inputUser" class="col-sm-8 col-form-label">User Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputUser" name="user" placeholder="Username">
+                    <input type="text" class="form-control" id="inputUser" name="username" placeholder="Username">
                 </div>
             </div>
             <div class="form-group row">
