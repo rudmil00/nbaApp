@@ -1,0 +1,21 @@
+
+.login{
+    padding: 20vh;
+    display: flex;
+   
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+img{
+    height: 400px;
+    width: 400px;
+}
+
+.forma{
+    width: 500px;
+}
+
+
+
+
