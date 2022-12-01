@@ -77,7 +77,7 @@ INSERT INTO `player` (`playerID`, `name`, `lastname`, `teamID`, `country`, `ppg`
 CREATE TABLE `team` (
   `teamID` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `titels` int(11) NOT NULL,
+  `titles` int(11) NOT NULL,
   `head_coach` varchar(30) NOT NULL,
   `founded` date NOT NULL,
   `cityID` int(11) UNSIGNED NOT NULL
@@ -87,7 +87,7 @@ CREATE TABLE `team` (
 -- Dumping data for table `team`
 --
 
-INSERT INTO `team` (`teamID`, `name`, `titels`, `head_coach`, `founded`, `cityID`) VALUES
+INSERT INTO `team` (`teamID`, `name`, `titles`, `head_coach`, `founded`, `cityID`) VALUES
 (1, 'Los Angeles Lakers', 13, 'Ham', '1945-02-02', 1),
 (2, 'New York Knicks', 2, 'Koach', '1925-01-01', 3);
 

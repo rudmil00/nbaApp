@@ -1,0 +1,29 @@
+body{
+    background: url("../image/nba-background-image.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+.tabelDiv{
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    /* background-color: white; */
+}
+table,th,td {
+    width: 80%;
+    border: 4px solid black;
+    border-collapse:collapse ;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+    table-layout: fixed;
+    background: blue;
+    opacity: 0.8;
+    color:white;
+}
+
+.formaAddTeam{
+    display: none;
+}
+
+
