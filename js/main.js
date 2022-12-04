@@ -33,6 +33,7 @@ $('#dodajForm').submit(function () {
 });
 
 
+
 $("#deleteTeam").click(function () {
     const checked = $("input[type=radio]:checked");
     console.log(checked);
@@ -44,15 +45,17 @@ $("#deleteTeam").click(function () {
     request.done(function (response, textStatus, jqXHR) {
         if (response === "Success") {
             checked.closest("tr").remove();
-            console.log("Tim je obrisan ");
-            alert("Tim je obrisan");
+
+            alert("Obrisan je odgovarajuci tim !");
 
         } else {
-            console.log("Tim nije obrisan " + response);
-            alert("Tim nije obrisan");
+            console.log("Tim nije upsesno obrisan " + response);
+            alert("Tim nije uspesno obrisan");
         }
     });
 });
+
+
 
 
 $(document).ready(function () {
@@ -60,3 +63,4 @@ $(document).ready(function () {
         $('#dodajForm').show();
     });
 });
+

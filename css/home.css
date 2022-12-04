@@ -16,7 +16,7 @@ table,th,td {
     text-align: center;
     font-size: 16px;
     font-weight: bolder;
-    table-layout: fixed;
+    /* table-layout: auto; */
     background: blue;
     opacity: 0.8;
     color:white;

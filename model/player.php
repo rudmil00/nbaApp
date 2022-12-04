@@ -34,4 +34,10 @@ class Player
         $this->ppg = $ppg;
         $this->apg = $apg;
     }
+
+    public static function getPlayersByTeamID($teamID, mysqli $conn)
+    {
+        $query = "SELECT * from player where teamID=$teamID";
+        return $conn->query($query);
+    }
 }

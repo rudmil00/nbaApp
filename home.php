@@ -3,21 +3,30 @@
 require "dbBroker.php";
 require "model/team.php";
 
+
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header('Location:index.php');
+
+if (isset($_POST['radio'])) {
+    $varTeam = $_GET['radio'];
+    $_SESSION['radio'] = $varTeam;
+    header('Location: playersPage.php');
     exit();
 }
+
 $result = Team::getAllTeam($conn);
 if (!$result) {
     echo "Pogresan upit ! ! !  <br>";
     die();
 }
 
+
+
+
 if ($result->num_rows == 0) {
     echo "Nema nijednog tima! ";
     die();
 } else {
+
 
 
 
@@ -55,6 +64,8 @@ if ($result->num_rows == 0) {
                                 <th scope="col">Head Coach</th>
                                 <th scope="col">Founded</th>
                                 <th scop="col">City name</th>
+                                <th scop="col"></th>
+                                <th scop="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,12 +81,16 @@ if ($result->num_rows == 0) {
                                     <td><?php echo $row['head_coach'] ?></td>
                                     <td><?php echo $row['founded'] ?></td>
                                     <td><?php echo $row['cityName'] ?></td>
+                                    <td> <a href="playersPage.php?teamID=<?php echo $row["teamID"] ?>"><button class="viewPlayers" id="viewPlayers"> View players</button></a></td>
                                     <td>
-                                        <label class="radio-btn">
-                                            <input type="radio" name="checked-donut" value=<?php echo $row["teamID"] ?>>
+
+                                        <label class=" radio-btn">
+                                            <input type="radio" name="radio" value=<?php echo $row["teamID"] ?>>
                                             <span class="checkmark"></span>
+
                                         </label>
                                     </td>
+
                                 </tr>
                             <?php endwhile ?>
                         <?php } ?>
@@ -132,6 +147,9 @@ if ($result->num_rows == 0) {
                 <button type="button" id="addButton" class=" btn btn-outline-primary">Dodaj novi tim</button>
                 <button class="dodajTim">Pretrazi tim po gradu</button>
                 <button class="delete" id="deleteTeam">Obrisi tim</button>
+
+
+
             </div>
         </div>
 
