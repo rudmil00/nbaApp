@@ -41,7 +41,7 @@ if ($result->num_rows == 0) {
             <div class="row">
                 <div class="col-sm-6">
                     <div class=" tabelDiv">
-                        <table class="table table-striped table-dark">
+                        <table id="playersTable" class="table table-striped table-dark">
                             <thead>
                                 <tr>
                                     <th scope="col">Player ID</th>
@@ -72,13 +72,14 @@ if ($result->num_rows == 0) {
                             </tbody>
                         </table>
                     </div>
+                    <input type="text" id="searchInput" onkeyup="search()" placeholder="Pretrazi igrace....">
                 </div>
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script src="js/main.js"></script>
-
+                <script src="js/searchPlayer.js"></script>
         </body>
 
     </html>
