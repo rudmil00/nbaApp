@@ -48,8 +48,8 @@ if ($result->num_rows == 0) {
                                     <th scope="col">Player Name</th>
                                     <th scope="col">Player Surname</th>
                                     <th scope="col">Drzava</th>
-                                    <th scope="col">Broj poena (prosek)</th>
-                                    <th scop="col">Broj asitencija(prosek)</th>
+                                    <th scope="col" onclick="sortTable(4)">Broj poena (prosek)</th>
+                                    <th scop="col" onclick="sortTable(5)">Broj asitencija(prosek)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,6 +80,7 @@ if ($result->num_rows == 0) {
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script src="js/main.js"></script>
                 <script src="js/searchPlayer.js"></script>
+                <script src="js/sortTable.js"></script>
         </body>
 
     </html>
