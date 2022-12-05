@@ -65,7 +65,7 @@ if ($result->num_rows == 0) {
                                         <td><?php echo $row['country'] ?></td>
                                         <td><?php echo $row['ppg'] ?></td>
                                         <td><?php echo $row['apg'] ?></td>
-
+                                        <td> <a href="updatePlayerPage.php?playerID=<?php echo $row["playerID"] ?>&playerName=<?php echo $row["playerName"] ?>&lastname=<?php echo $row["lastname"] ?>"><button class="updatePlayer" id="updatePlayer"> Update players</button></a></td>
                                     </tr>
                                 <?php endwhile ?>
                             <?php } ?>

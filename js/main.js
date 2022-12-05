@@ -21,6 +21,7 @@ $('#dodajForm').submit(function () {
         console.log(res);
         if (res == "Success") {
             alert("Uspesno dodat tim !");
+            checked.closest("tr").add();
             console.log("bla bla");
             location.reload(true);
         } else console.log("Tim nije dodat " + res);
@@ -55,6 +56,40 @@ $("#deleteTeam").click(function () {
     });
 });
 
+$('#updatePlayer').submit(function () {
+    event.preventDefault();
+    console.log("Update igraca u bazu");
+    const $form = $(this);
+    const $input = $form.find('input, select, button, textarea');
+
+    const serijalizacija = $form.serialize();
+    console.log("Ovo je serijalizacija");
+    let obj = $form.serializeArray().reduce(function (json, { name, value }) {
+        json[name] = value;
+        return json;
+    }, {});
+    console.log(obj);
+
+    console.log(serijalizacija);
+
+    $input.prop('disabled', true);
+
+    request = $.ajax({
+        url: "handler/updatePlayer.php",
+        type: "post",
+        data: serijalizacija,
+        error: function (jQueryXHR, textStatus, errorMessage) {
+            console.log("Something went wrong " + errorMessage);
+            alert("Pokusajte ponovo nesto nije uredu!");
+            location.reload(true);
+        },
+        success: function () {
+            alert("Uspesno je azuriran igrac...!");
+            history.back();
+        }
+    });
+
+});
 
 
 

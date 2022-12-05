@@ -6,6 +6,11 @@ require "model/team.php";
 
 session_start();
 
+if (empty($_SESSION['logged']) || $_SESSION['logged'] == '' || $_SESSION['user_id'] < 0) {
+    header("Location: index.php");
+    die();
+}
+
 if (isset($_POST['radio'])) {
     $varTeam = $_GET['radio'];
     $_SESSION['radio'] = $varTeam;
@@ -147,7 +152,7 @@ if ($result->num_rows == 0) {
                 <button type="button" id="addButton" class=" btn btn-outline-primary">Dodaj novi tim</button>
                 <button class="dodajTim">Pretrazi tim po gradu</button>
                 <button class="delete" id="deleteTeam">Obrisi tim</button>
-
+                <a href="logout.php" class="label label-primary" style="font-size:16px; position: fixed; bottom:0; right:0; float:right">Odjavi se</a>
 
 
             </div>

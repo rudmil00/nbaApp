@@ -40,4 +40,13 @@ class Player
         $query = "SELECT * from player where teamID=$teamID";
         return $conn->query($query);
     }
+
+
+
+    public static function updatePlayer($playerID,  $teamID, $country, $ppg, $apg, mysqli $conn)
+    {
+
+        $q = "UPDATE player set teamID=$teamID,country='$country', ppg=$ppg,apg=$apg WHERE playerID=$playerID";
+        return $conn->query($q);
+    }
 }

@@ -48,4 +48,17 @@ class Team
         $query = "DELETE FROM team WHERE teamID=$id";
         return $conn->query($query);
     }
+
+
+    public static function getTeamID($name, mysqli $conn)
+    {
+        $query = "SELECT teamID from team where teamName='$name'";
+
+        $result = mysqli_query($conn, $query);
+        $array = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_free_result($result);
+
+        print_r($result);
+        return $array;
+    }
 }

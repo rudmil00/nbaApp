@@ -13,7 +13,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
         echo "Uspesno ste se prijavili";
         $_SESSION['user_id'] = $usr->id;
-
+        $_SESSION['logged'] = "ulogovan";
         header('Location: home.php');
         exit();
     } else {
