@@ -1,5 +1,11 @@
+.tabelDiv{
+    margin:15%;
+
+    
+}
+
 body{
-    background: url("../image/nba-background-image.jpg") no-repeat center fixed;
+    background: url("https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/utgfcacoxl6hwd2bj2ay/10-most-influential-nba-players-2022-original-nonw?fimg-ssr-default") no-repeat center fixed;
     background-size: cover;
 
 }
@@ -13,16 +19,8 @@ margin-top: 0px;
 margin-left: 50%;
 margin-bottom: 1px;
 }
-
-.tabelDiv{
-    margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
-
-    /* background-color: white; */
-}
-.table-responsive {
-    max-height: 400px;
+.input-group{
+margin-left: 10%;
 }
 table,th,td {
     width: 100%;
@@ -35,12 +33,4 @@ table,th,td {
     background: blue;
     opacity: 0.8;
     color:white;
-}
-
-.formaAddTeam{
-    display: none;
-}
-
-.buttons{
-    margin:5%;
 }

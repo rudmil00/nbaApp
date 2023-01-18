@@ -7,7 +7,6 @@ require "../model/city.php";
 
 
 
-
 if (
     isset($_POST['teamName']) && isset($_POST['titles'])
     && isset($_POST['headCoach']) && isset($_POST['founded']) && isset($_POST['cityName'])
@@ -18,11 +17,15 @@ if (
     foreach ($cityID as $city) {
         $idC = $city['cityID'];
     }
+    print_r($idC);
+
+
     if (!isset($idC)) {
 
         //stavi alert box
 
-
+        // echo '<script>alert("Nema takvog grada u bazi")</script>';
+        // header("Refresh:0");
         // PHP program to pop an alert
         // message box on the screen
 
@@ -33,6 +36,7 @@ if (
 
         die();
     }
+
     $nameCity = strval($_POST['cityName']);
 
     $city = new City($idC, $nameCity);
@@ -42,9 +46,9 @@ if (
     print_r($team);
 
     $status = Team::add($team, $conn);
-}
-if ($status) {
-    echo 'Success';
+    if ($status) {
+        echo 'Success';
+    }
 } else {
     echo $status;
     echo "Failed";

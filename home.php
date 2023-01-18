@@ -49,6 +49,9 @@ if ($result->num_rows == 0) {
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="css/home.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        </style>
         <title>Home</title>
     </head>
 
@@ -60,47 +63,49 @@ if ($result->num_rows == 0) {
         <div class="row">
             <div class="col-sm-6">
                 <div class=" tabelDiv">
-                    <table class="table table-striped table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">TeamID</th>
-                                <th scope="col">Team name</th>
-                                <th scope="col">Titles</th>
-                                <th scope="col">Head Coach</th>
-                                <th scope="col">Founded</th>
-                                <th scop="col">City name</th>
-                                <th scop="col"></th>
-                                <th scop="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- ovde krece php t.teamID,t.name,t.titles,t.head_coach,t.founded,c.name-->
-                            <?php
-                            while ($row = $result->fetch_array()) :
-                            ?>
+                    <div class="panel-body table-responsive">
+                        <table class="table table-striped table-dark">
+                            <thead>
                                 <tr>
-
-                                    <td><?php echo $row['teamID'] ?></td>
-                                    <td><?php echo $row['teamName'] ?></td>
-                                    <td><?php echo $row['titles'] ?></td>
-                                    <td><?php echo $row['head_coach'] ?></td>
-                                    <td><?php echo $row['founded'] ?></td>
-                                    <td><?php echo $row['cityName'] ?></td>
-                                    <td> <a href="playersPage.php?teamID=<?php echo $row["teamID"] ?>"><button class="viewPlayers" id="viewPlayers"> View players</button></a></td>
-                                    <td>
-
-                                        <label class=" radio-btn">
-                                            <input type="radio" name="radio" value=<?php echo $row["teamID"] ?>>
-                                            <span class="checkmark"></span>
-
-                                        </label>
-                                    </td>
-
+                                    <th scope="col">TeamID</th>
+                                    <th scope="col">Team name</th>
+                                    <th scope="col">Titles</th>
+                                    <th scope="col">Head Coach</th>
+                                    <th scope="col">Founded</th>
+                                    <th scop="col">City name</th>
+                                    <th scop="col"></th>
+                                    <th scop="col"></th>
                                 </tr>
-                            <?php endwhile ?>
-                        <?php } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <!-- ovde krece php t.teamID,t.name,t.titles,t.head_coach,t.founded,c.name-->
+                                <?php
+                                while ($row = $result->fetch_array()) :
+                                ?>
+                                    <tr>
+
+                                        <td><?php echo $row['teamID'] ?></td>
+                                        <td><?php echo $row['teamName'] ?></td>
+                                        <td><?php echo $row['titles'] ?></td>
+                                        <td><?php echo $row['head_coach'] ?></td>
+                                        <td><?php echo $row['founded'] ?></td>
+                                        <td><?php echo $row['cityName'] ?></td>
+                                        <td> <a href="playersPage.php?teamID=<?php echo $row["teamID"] ?>"><button class="viewPlayers" id="viewPlayers"> View players</button></a></td>
+                                        <td>
+
+                                            <label class=" radio-btn">
+                                                <input type="radio" name="radio" value=<?php echo $row["teamID"] ?>>
+                                                <span class="checkmark"></span>
+
+                                            </label>
+                                        </td>
+
+                                    </tr>
+                                <?php endwhile ?>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -149,10 +154,12 @@ if ($result->num_rows == 0) {
 
         <div class="row">
             <div class="buttons">
-                <button type="button" id="addButton" class=" btn btn-outline-primary">Dodaj novi tim</button>
-                <button class="dodajTim">Pretrazi tim po gradu</button>
-                <button class="delete" id="deleteTeam">Obrisi tim</button>
-                <a href="logout.php" class="label label-primary" style="font-size:16px; position: fixed; bottom:0; right:0; float:right">Odjavi se</a>
+                <button type="button" id="addButton" class=" btn btn-primary btn-lg ">Dodaj novi tim</button>
+                <button type="button" class="btn btn-primary btn-lg" id="deleteTeam">Obrisi tim</button>
+
+
+
+                <a href="logout.php" class="btn btn-primary btn-lg enabled" role="button" aria-disabled="true">Odjavi se</a>
 
 
             </div>

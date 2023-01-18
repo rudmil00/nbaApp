@@ -13,24 +13,19 @@ $('#dodajForm').submit(function () {
     req = $.ajax({
         url: 'handler/addTeam.php',
         type: 'post',
-        data: serijalizacija
-    });
-
-    req.done(function (res, textStatus, jqXHR) {
-        console.log("ovo je res");
-        console.log(res);
-        if (res == "Success") {
-            alert("Uspesno dodat tim !");
-            checked.closest("tr").add();
-            console.log("bla bla");
+        data: serijalizacija,
+        error: function (jQueryXHR, textStatus, errorMessage) {
+            console.log("Something went wrong " + errorMessage);
+            alert("Pokusajte ponovo nesto nije uredu!");
             location.reload(true);
-        } else console.log("Tim nije dodat " + res);
-        console.log(res);
+        },
+        success: function () {
+            //   alert("Uspesno je dodat tim...!");
+            //   location.reload(true);
+            console.log("usao sam u succssess");
+        }
     });
 
-    req.fail(function (jqXHR, textStatus, errorThrown) {
-        console.error('Sledeca greska se desila> ' + textStatus, errorThrown);
-    });
 });
 
 
