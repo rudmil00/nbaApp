@@ -60,8 +60,8 @@ CREATE TABLE `player` (
 /*Data for the table `player` */
 
 insert  into `player`(`playerID`,`playerName`,`lastname`,`teamID`,`country`,`ppg`,`apg`) values 
-(1,'Lebron','James',1,'USA',23.4,8.2),
-(2,'Anthony','Davis',3,'USA',12,3),
+(1,'Lebron','James',1,'USA',24,23),
+(2,'Anthony','Davis',1,'USA',21.2,11.2),
 (3,'Russel','Westbrook',1,'USA',15.3,4.5),
 (4,'Kendrick','Nunn',1,'Srbija',18.2,6.2),
 (5,'Derick','Rose',2,'Srbija',18.2,12.2),
@@ -88,7 +88,7 @@ CREATE TABLE `team` (
   PRIMARY KEY (`teamID`),
   KEY `cityID` (`cityID`),
   CONSTRAINT `team_ibfk_1` FOREIGN KEY (`cityID`) REFERENCES `city` (`cityID`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `team` */
 
