@@ -10,19 +10,24 @@ $('#dodajForm').submit(function () {
 
     $input.prop('disabled', true);
 
-    req = $.ajax({
+    request = $.ajax({
         url: 'handler/addTeam.php',
         type: 'post',
         data: serijalizacija,
-        error: function (jQueryXHR, textStatus, errorMessage) {
-            console.log("Something went wrong " + errorMessage);
-            alert("Pokusajte ponovo nesto nije uredu!");
+
+    });
+    request.done(function (response, textStatus, jqXHR) {
+
+        if (response.includes("Success")) {
+
+            alert("Uspesno je dodat tim...!");
             location.reload(true);
-        },
-        success: function () {
-            //   alert("Uspesno je dodat tim...!");
-            //   location.reload(true);
-            console.log("usao sam u succssess");
+
+
+        } else {
+            console.log("Tim nije upsesno dodat " + response);
+            alert("Tim nije uspesno dodat");
+            location.reload(true);
         }
     });
 
@@ -73,16 +78,19 @@ $('#updatePlayer').submit(function () {
         url: "handler/updatePlayer.php",
         type: "post",
         data: serijalizacija,
-        error: function (jQueryXHR, textStatus, errorMessage) {
-            console.log("Something went wrong " + errorMessage);
-            alert("Pokusajte ponovo nesto nije uredu!");
-            location.reload(true);
-        },
-        success: function () {
+
+    });
+    request.done(function (response, textStatus, jqXHR) {
+        if (response.includes("Success")) {
             alert("Uspesno je azuriran igrac...!");
             history.back();
+
+        } else {
+            alert("Pokusajte ponovo nesto nije uredu!");
+            location.reload(true);
         }
     });
+
 
 });
 

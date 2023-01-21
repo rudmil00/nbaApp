@@ -5,7 +5,7 @@
 }
 
 body{
-    background: url("https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/utgfcacoxl6hwd2bj2ay/10-most-influential-nba-players-2022-original-nonw?fimg-ssr-default") no-repeat center fixed;
+    background: url("../image/players_page.jpg") no-repeat center fixed;
     background-size: cover;
 
 }
@@ -21,6 +21,11 @@ margin-bottom: 1px;
 }
 .input-group{
 margin-left: 10%;
+}
+.table-responsive {
+    max-height: 600px;
+  width: 40vw;
+    
 }
 table,th,td {
     width: 100%;

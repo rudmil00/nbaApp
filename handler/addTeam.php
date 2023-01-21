@@ -13,25 +13,15 @@ if (
 ) {
 
     $cityID = City::getCity($conn, $_POST['cityName']);
-
+    if (!isset($cityID)) {
+        die();
+    }
     foreach ($cityID as $city) {
         $idC = $city['cityID'];
     }
-    print_r($idC);
 
 
     if (!isset($idC)) {
-
-        //stavi alert box
-
-        // echo '<script>alert("Nema takvog grada u bazi")</script>';
-        // header("Refresh:0");
-        // PHP program to pop an alert
-        // message box on the screen
-
-        // Display the alert box 
-
-
 
 
         die();

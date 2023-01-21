@@ -19,13 +19,13 @@ $lastName = $_GET['lastname'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update Player</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/updatePlayer.css">
-
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -67,6 +67,7 @@ $lastName = $_GET['lastname'];
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <input type="submit" value="Update player" name="submitPlayer" class="btn btn-primary" />
+                <button type="button" class="btn btn-primary" onclick="history.back();">Players Page</button>
             </div>
         </div>
     </form>

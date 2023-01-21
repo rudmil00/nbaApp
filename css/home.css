@@ -19,10 +19,11 @@ margin-bottom: 1px;
     margin-left: 10%;
     margin-right: 10%;
 
-    /* background-color: white; */
+   
 }
 .table-responsive {
     max-height: 400px;
+    width: 40vw;
 }
 table,th,td {
     width: 100%;

@@ -49,6 +49,7 @@ if ($result->num_rows == 0) {
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="css/home.css">
+        <link rel="icon" href="image/favicon.ico" type="image/x-icon">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
         </style>

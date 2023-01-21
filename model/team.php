@@ -32,14 +32,13 @@ class Team
     }
     public static function add(Team $team, mysqli $conn)
     {
-        echo "USAO SAM U ADD ";
+
         if ($team == null) {
-            echo "Null je";
         }
         $a = $team->city->cityID;
 
         $q = "INSERT INTO team(teamName,titles,head_coach,founded,cityID)  VALUES('$team->teamName',$team->titles,'$team->head_coach','$team->founded',$a)";
-        echo "Ovo je $q";
+        // echo "Ovo je $q";
         return $conn->query($q);
     }
 
